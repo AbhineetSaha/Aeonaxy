@@ -11,7 +11,7 @@ function Verification() {
 
     useEffect(() => {
         async function fetchEmail() {
-            const response = await axios.get(`http://localhost:3001/api/getEmail?username=${username}`);
+            const response = await axios.get(`https://aeonaxy-b022.onrender.com/api/getEmail?username=${username}`);
             setEmail(response.data);
             sendEmail(response.data);
         }
@@ -19,7 +19,7 @@ function Verification() {
     }, (0));
 
     async function sendEmail(email){
-        const {data , error }= await axios.get(`http://localhost:3001/api/verification?email=${email}&user=${username}`);
+        const {data , error }= await axios.get(`https://aeonaxy-b022.onrender.com/api/verification?email=${email}&user=${username}`);
     }
 
     if(window.innerWidth > 1024){

@@ -18,7 +18,7 @@ function ProfileMaking() {
   }, []);
   
   const handleClick = async() => {
-    const {data, error} = await axios.get(`http://localhost:3001/api/pushProfile?username=${username}&location=${location}&photo=${photo}`).then(res => {navigate(`/role/${username}`)});
+    const {data, error} = await axios.get(`https://aeonaxy-b022.onrender.com/api/pushProfile?username=${username}&location=${location}&photo=${photo}`).then(res => {navigate(`/role/${username}`)});
   };
 
   const handlePhotoUpload = async(event) => {

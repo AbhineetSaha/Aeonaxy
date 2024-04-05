@@ -60,7 +60,7 @@ function SignUp() {
     setError([]);
     var check = await checkValues();
     if (check === true){
-        axios.get(`http://localhost:3001/api/pushData?username=${username}&name=${name}&password=${password}&email=${email}`).then((res) => {navigate(`/profilemaking/${username}`)});
+        axios.get(`https://aeonaxy-b022.onrender.com/api/pushData?username=${username}&name=${name}&password=${password}&email=${email}`).then((res) => {navigate(`/profilemaking/${username}`)});
       };
     }
 
