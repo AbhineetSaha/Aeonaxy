@@ -16,7 +16,7 @@ function App() {
       <Route path="/profilemaking/:username" element={<ProfileMaking />} />
       <Route path='/role/:username' element={<Role />} />
       <Route path='/verification/:username' element={<Verification />} />
-    </Routes>
+      </Routes>
     </Router>
   )
 }

@@ -70,7 +70,7 @@ function SignUp() {
       <section className="side-content">
         <div className='logo'>
         <a href="/" className="auth-sidebar-logo">
-          <img src="logo.png" height="56" width="56" alt="logo" />
+          <img src="/logo.png" height="56" width="56" alt="logo" />
         </a>
         <h1 className="typewriter">We Create What You Want!</h1>
         <img src="banner.png" className="auth-sidebar-banner" alt="banner" />
