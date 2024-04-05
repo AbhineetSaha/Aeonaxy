@@ -1,0 +1,85 @@
+.radio-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding: 20px 20px;
+    margin-right: 25px;
+    margin-left: 25px;
+    cursor: pointer;
+    font-size: 24px;
+    border: 2px solid #ccc;
+    border-radius: 18px;
+    width: 35%;
+    height: 20vh;
+    transition: ease-in-out 0.3s;
+  }
+
+.radio-container.selected{
+    border-color: rgb(94, 94, 251);
+}
+
+.role-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.radio-button {
+    display: inline-block;
+    position: relative;
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 10px;
+    transition: ease-in-out 0.3s;
+}
+  
+.radio-container input:checked ~ .radio-button {
+    background-color: rgb(94, 94, 251);
+    border-color: rgb(94, 94, 251);
+}
+  
+.radio-button:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+  
+.radio-container input:checked ~ .radio-button:after {
+    display: block;
+}
+  
+.radio-container .radio-button:after {
+    top: 3px;
+    right: 3px;
+    left: auto;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: white;
+}
+
+.radio-container input[type='radio']:checked ~ .radio-container{
+    border-color: rgb(94, 94, 251);
+}
+
+#radio{
+    display:none;
+}
+
+@media(max-width: 1024px){
+    .radio-container{
+        width: 100%;
+        margin-left: 0;
+        height: 15vh;
+        margin-bottom: 30px;
+    }
+
+    .role-content{
+        margin-top: 40px;
+    }
+}

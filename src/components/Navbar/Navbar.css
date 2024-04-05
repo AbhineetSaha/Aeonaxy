@@ -1,0 +1,17 @@
+@media(min-width: 1024px){
+    .navbar-brand{
+        display:block;
+        position: absolute;
+        z-index: 1;
+        top: 40px;
+        left: 40px;
+        fill: #fff;
+        color: #fff;
+    }
+}
+
+@media (max-width: 1024px) {
+    .navbar{
+        top: -50px;
+    }
+}

@@ -1,0 +1,223 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Rubik', sans-serif;
+}
+
+.side-content{
+    position: absolute;
+    width: 35%;
+    color: black;
+    height: 100%;
+    background: linear-gradient(180deg, #5e5efb 0%, #21c4d0 100%);
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.auth-sidebar-logo{
+    display:block;
+    position: absolute;
+    z-index: 1;
+    top: 40px;
+    left: 40px;
+    fill: #fff;
+    color: #fff;
+}
+
+.auth-sidebar-banner{
+    display: block;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    height: 100%;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+
+}
+
+.auth-sidebar-credit{
+    display:block;
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    text-decoration: unset;
+    font-family: "Mona Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: black;
+}
+
+.main-content{
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    margin-left: 20%;
+}
+
+.about{
+    display: block;
+    margin-top: 30%;
+    margin-left: 5%;
+    font-size: 4.4117647058824rem;
+    font-family: 'Rubik', sans-serif;
+    color: var(--ast-global-color-2);
+}
+
+.h2{
+    margin-bottom: 0;
+    font: bold 24px / 29px "Mona Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    vertical-align: baseline;
+}
+
+@media (min-width: 1024px){
+    main {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+    }
+    .auth-content {
+        margin: 30%;
+        padding-top: 200px;
+    }
+
+    .submitBtn{
+        width: 100%;
+    }
+
+    input.text-input{
+        width: 100%;
+    }
+}
+
+@media (max-width: 1024px){
+    body{
+        padding-top: 20%;
+    }
+    .side-content{
+        display: none;
+    }
+    .main-content{
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .submitBtn{
+        width: 100%;
+    }
+
+    input.text-input{
+        width: 100%;
+    }
+}
+
+.auth-content {
+    width: 100%;
+    max-width: 416px;
+    margin: auto;
+}
+
+main {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+@media (min-width: 400px){
+    div.form-field-group {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+}
+
+.form-field {
+    padding: 12px 0;
+}
+
+div.form-field-group .form-field {
+    width: 48%;
+}
+
+form.with-messages div.form-field {
+    position: relative;
+}
+
+input.text-input {
+    margin-right: 8px;
+    border: 1.5px solid #e7e7e9;
+    font-size: 14px;
+    font-family: "Mona Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 56px;
+    padding: 18px 20px;
+    -webkit-transition: background-color 200ms ease, outline 200ms ease, color 200ms ease, -webkit-box-shadow 200ms ease;
+    transition: background-color 200ms ease, outline 200ms ease, color 200ms ease, -webkit-box-shadow 200ms ease;
+    transition: background-color 200ms ease, outline 200ms ease, color 200ms ease, box-shadow 200ms ease;
+    transition: background-color 200ms ease, outline 200ms ease, color 200ms ease, box-shadow 200ms ease, -webkit-box-shadow 200ms ease;
+    border-radius: 12px;
+    outline: none;
+    background-color: #fff;
+    color: #0d0c22;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-font-feature-settings: 'ss01';
+    font-feature-settings: 'ss01';
+}
+
+label {
+    display: block;
+    margin-bottom:4px;
+    color: #0d0c22;
+    font: bold 15px / 24px "Mona Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.submitBtn {
+    height: 60px;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.13);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(to left,rgb(94, 94, 251),rgb(33, 196, 208));
+    letter-spacing: 0.7px;
+}
+  
