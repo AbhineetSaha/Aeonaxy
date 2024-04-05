@@ -16,7 +16,7 @@ function Verification() {
             sendEmail(response.data);
         }
         fetchEmail();
-    }, (0));
+    }, []);
 
     async function sendEmail(email){
         const {data , error }= await axios.get(`https://aeonaxy-b022.onrender.com/api/verification?email=${email}&user=${username}`);
