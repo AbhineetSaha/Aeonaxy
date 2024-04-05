@@ -16,7 +16,7 @@ function SignUp() {
 
   async function checkValues(){
     var t = true;
-    const usernames = await axios.get('http://localhost:3001/api/getUsernames').then(res => {return res.data});
+    const usernames = await axios.get('https://aeonaxy-b022.onrender.com/api/getUsernames').then(res => {return res.data});
     console.log(usernames);
     if (name === ''){
       setError(error => [...error, 'Name is required']);
