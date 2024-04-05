@@ -100,7 +100,7 @@ function SignUp() {
             </div>
             <div className="form-field check-wrap opt-in">
             <Form.Group className="mb-3" controlId="formBasicCheckbox">
-              <Form.Check type="checkbox" label="I agree to the Terms and Conditions" onChange={(e) => console.log(e.target.value)} />
+              <Form.Check type="checkbox" label="I agree to the Terms and Conditions" onChange={(e) => setChecked(e.target.checked)} />
             </Form.Group>
             <button className="submitBtn" type="button" onClick={handleClick} >Create Account</button>
             </div>
