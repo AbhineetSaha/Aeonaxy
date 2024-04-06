@@ -9,7 +9,7 @@ function Role() {
     const [role, setRole] = React.useState('');
     const navigate = useNavigate();
     const handleClick = async() => {
-        const {data, error} = await axios.get(`https://aeonaxy-b022.onrender.com/api/pushRole?username=${username}&role=${role}`).then(res => {navigate(`/verification/${username}`)});
+        const {data, error} = await axios.get(`${process.env.API_URL}/api/pushRole?username=${username}&role=${role}`).then(res => {navigate(`/verification/${username}`)});
     }
 
     if(window.innerWidth > 1024){

@@ -16,7 +16,7 @@ function SignUp() {
 
   async function checkValues(){
     var t = true;
-    const usernames = await axios.get('https://aeonaxy-b022.onrender.com/api/getUsernames').then(res => {return res.data});
+    const usernames = await axios.get(`${process.env.API_URL}/api/getUsernames`).then(res => {return res.data});
     console.log(usernames);
     if (name === ''){
       setError(error => [...error, 'Name is required']);
@@ -60,7 +60,7 @@ function SignUp() {
     setError([]);
     var check = await checkValues();
     if (check === true){
-        axios.get(`https://aeonaxy-b022.onrender.com/api/pushData?username=${username}&name=${name}&password=${password}&email=${email}`).then((res) => {navigate(`/profilemaking/${username}`)});
+        axios.get(`${process.env.API_URL}/api/pushData?username=${username}&name=${name}&password=${password}&email=${email}`).then((res) => {navigate(`/profilemaking/${username}`)});
       };
     }
 

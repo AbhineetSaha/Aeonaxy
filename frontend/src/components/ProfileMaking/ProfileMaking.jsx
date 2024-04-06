@@ -3,10 +3,12 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
+import dotenv from 'dotenv';
 
 
 function ProfileMaking() {
   const navigate = useNavigate();
+
   const { username } = useParams();
   const [location, setLocation] = useState('');
   const [photo, setPhoto] = useState('/profilepic.jpeg');
@@ -18,7 +20,7 @@ function ProfileMaking() {
   }, []);
   
   const handleClick = async() => {
-    const {data, error} = await axios.get(`https://aeonaxy-b022.onrender.com/api/pushProfile?username=${username}&location=${location}&photo=${photo}`).then(res => {navigate(`/role/${username}`)});
+    const {data, error} = await axios.get(`${process.env.API_URL}/api/pushProfile?username=${username}&location=${location}&photo=${photo}`).then(res => {navigate(`/role/${username}`)});
   };
 
   const handlePhotoUpload = async(event) => {
