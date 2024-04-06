@@ -3,12 +3,10 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
-import dotenv from 'dotenv';
 
 
 function ProfileMaking() {
   const navigate = useNavigate();
-
   const { username } = useParams();
   const [location, setLocation] = useState('');
   const [photo, setPhoto] = useState('/profilepic.jpeg');

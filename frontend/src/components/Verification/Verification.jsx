@@ -4,7 +4,6 @@ import axios from 'axios';
 import Navbar from '../Navbar/Navbar'
 import './Verification.css'
 
-
 function Verification() {
     const { username } = useParams();
     const [u_email, setEmail] = useState('');
