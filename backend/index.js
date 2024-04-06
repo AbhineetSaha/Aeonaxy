@@ -3,6 +3,7 @@ const app = express();
 require('dotenv').config();
 const { createClient } = require("@supabase/supabase-js");
 const { Resend } = require('resend');
+const serverless = require('serverless-http');
 
 const supabase = createClient(
   process.env.SUPABASE_URL,
@@ -106,3 +107,5 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
+
+module.exports.handler = serverless(app);
