@@ -49,7 +49,6 @@ function Verification() {
                         <p className='header-sub'>Please verify your email address. We've sent a confirmation email to</p>
                         <p className='email'>{u_email}</p>
                         <p className='header-sub'>Didn't recieve the email? Check your Spam folder, it may have been caught by a filter.<br></br>If you still don't see it, you can<br></br> <button onClick={sendEmail} className='re'>resend the confirmation email</button></p>
-                        <span>{u_email}</span>
                     </header>
                 </div>
             </>
