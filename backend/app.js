@@ -6,6 +6,7 @@ import { resend } from './lib/resend.js';
 const app = express();
 
 app.use(cors());
+app.use(express.static("public"));
 
 app.get(`/api/fetchEmail`, async (req, res) => {
     const { username } = req.query;
