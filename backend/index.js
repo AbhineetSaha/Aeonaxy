@@ -1,5 +1,6 @@
 var express = require('express');
 const app = express();
+const cors = require('cors');
 require('dotenv').config();
 const { createClient } = require("@supabase/supabase-js");
 const { Resend } = require('resend');
@@ -11,6 +12,8 @@ const supabase = createClient(
 );
 
 const resend = new Resend(process.env.RESEND_KEY);
+
+app.use(cors());
 
 app.get('/', function(req, res, next) {
     res.send("Working");
