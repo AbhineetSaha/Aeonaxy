@@ -10,7 +10,7 @@ function Verification() {
 
     useEffect(() => {
         async function fetchEmail() {
-            const response = await axios.get(`${process.env.API_URL}/api/getEmail?username=${username}`);
+            const response = await axios.get(`https://starfish-app-dgren.ondigitalocean.app/api/getEmail?username=${username}`);
             setEmail(response.data);
             sendEmail(response.data);
         }
@@ -18,7 +18,7 @@ function Verification() {
     }, []);
 
     async function sendEmail(email){
-        const {data , error }= await axios.get(`${process.env.API_URL}/api/verification?email=${email}&user=${username}`);
+        const {data , error }= await axios.get(`https://starfish-app-dgren.ondigitalocean.app/api/verification?email=${email}&user=${username}`);
     }
 
     if(window.innerWidth > 1024){

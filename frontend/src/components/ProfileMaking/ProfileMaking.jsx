@@ -18,7 +18,7 @@ function ProfileMaking() {
   }, []);
   
   const handleClick = async() => {
-    const {data, error} = await axios.get(`${process.env.API_URL}/api/pushProfile?username=${username}&location=${location}&photo=${photo}`).then(res => {navigate(`/role/${username}`)});
+    const {data, error} = await axios.get(`https://starfish-app-dgren.ondigitalocean.app/api/pushProfile?username=${username}&location=${location}&photo=${photo}`).then(res => {navigate(`/role/${username}`)});
   };
 
   const handlePhotoUpload = async(event) => {
