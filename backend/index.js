@@ -19,7 +19,7 @@ app.get('/', function(req, res, next) {
     res.send("Working");
 });
   
-app.get(`/fetchEmail`, async (req, res) => {
+app.get(`/api/fetchEmail`, async (req, res) => {
     const { username } = req.query;
     try {
         const { data, error } = await supabase.from('user').select('email').eq('username', username);
@@ -31,7 +31,7 @@ app.get(`/fetchEmail`, async (req, res) => {
     }
 });
   
-app.get('/pushData', async (req, res) => {
+app.get('/api/pushData', async (req, res) => {
     const u_email = req.query.email;
     const u_name = req.query.name;
     const u_password = req.query.password;
@@ -44,7 +44,7 @@ app.get('/pushData', async (req, res) => {
     }
 });
   
-app.get('/getUsernames', async (req, res) => {
+app.get('/api/getUsernames', async (req, res) => {
     try {
         const { data, error } = await supabase.from('user').select('username');
         if (error) throw error;
@@ -59,7 +59,7 @@ app.get('/getUsernames', async (req, res) => {
     }
 });
   
-app.get('/pushRole', async (req, res) => {
+app.get('/api/pushRole', async (req, res) => {
     const u_username = req.query.username;
     const u_role = req.query.role;
     const { data, error } = await supabase.from('role').insert([{user:u_username,role:u_role}]);
@@ -70,7 +70,7 @@ app.get('/pushRole', async (req, res) => {
     }
 });
   
-app.get('/pushProfile', async (req, res) => {
+app.get('/api/pushProfile', async (req, res) => {
     const u_username = req.query.username;
     const u_location = req.query.location;
     const u_photo = req.query.photo;
@@ -82,13 +82,13 @@ app.get('/pushProfile', async (req, res) => {
     }
 });
   
-app.get('/getEmail', async(req, res) => {
+app.get('/api/getEmail', async(req, res) => {
     const u_username = req.query.username;
     const { data, error } = await supabase.from('user').select('email').eq('username', u_username);
     res.send(data[0].email);
 });
   
-app.get('/verification', async (req, res) => {
+app.get('/api/verification', async (req, res) => {
     const email = req.query.email;
     const user = req.query.user;
     console.log(email);
