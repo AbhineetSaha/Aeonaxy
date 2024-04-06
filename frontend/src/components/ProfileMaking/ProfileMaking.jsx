@@ -21,8 +21,42 @@ function ProfileMaking() {
     const {data, error} = await axios.get(`https://starfish-app-dgren.ondigitalocean.app/api/pushProfile?username=${username}&location=${location}&photo=${photo}`).then(res => {navigate(`/role/${username}`)});
   };
 
-  const handlePhotoUpload = async(event) => {
-    setPhoto(URL.createObjectURL(event.target.files[0]));
+  const handleImageChange = (event) => {
+    if (event.target.files && event.target.files[0]) {
+      const file = event.target.files[0];
+      const imgname = event.target.files[0].name;
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onloadend = () => {
+        const img = new Image();
+        img.src = reader.result;
+        img.onload = () => {
+          const canvas = document.createElement("canvas");
+          const maxSize = Math.max(img.width, img.height);
+          canvas.width = maxSize;
+          canvas.height = maxSize;
+          const ctx = canvas.getContext("2d");
+          ctx.drawImage(
+            img,
+            (maxSize - img.width) / 2,
+            (maxSize - img.height) / 2
+          );
+          canvas.toBlob(
+            (blob) => {
+              const file = new File([blob], imgname, {
+                type: "image/png",
+                lastModified: Date.now(),
+              });
+
+              console.log(file);
+              setPhoto(URL.createObjectURL(file));
+            },
+            "image/jpeg",
+            0.8
+          );
+        };
+      };
+    }
   };
     
   return (
@@ -42,7 +76,7 @@ function ProfileMaking() {
               <div className='avater-uploader'>
                 <div className='drop-area'>
                   <img src={photo} id='photo'/>
-                  <input type='file' id='file' onChange={handlePhotoUpload}/>
+                  <input type='file' id='file' onChange={handleImageChange}/>
                   <label for='file' id='uploadbtn'><img src='/camera.png' height='30' width='30' /></label>
                 </div>
               </div>
