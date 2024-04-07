@@ -3,7 +3,7 @@ import { useNavigate} from 'react-router-dom';
 import './SignUp.css'
 import Form from 'react-bootstrap/esm/Form';
 import axios from 'axios';
-
+import Navbar from '../Navbar/Navbar';
 
 function SignUp() {
   const navigate = useNavigate();
@@ -67,16 +67,7 @@ function SignUp() {
   if (window.innerWidth < 960){
     return (
       <div className='SignUp'>
-      <section className="side-content">
-        <div className='logo'>
-        <a href="/" className="auth-sidebar-logo">
-          <img src="/logo.png" height="56" width="56" alt="logo" />
-        </a>
-        <h1 className="typewriter">We Create What You Want!</h1>
-        <img src="banner.png" className="auth-sidebar-banner" alt="banner" />
-        <a className="auth-sidebar-credit" href="">@Aeonaxy</a>
-        </div>
-      </section>
+      <Navbar />
       <section className="main-content">
         <main>
           <div className="auth-content">
