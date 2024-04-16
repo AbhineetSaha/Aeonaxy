@@ -37,11 +37,9 @@
 
 .auth-sidebar-banner{
     display: block;
-    width: 100%;
-    -o-object-fit: cover;
+    width: 90%;
     object-fit: cover;
-    height: 100%;
-    overflow-clip-margin: content-box;
+    height: 90%;
     overflow: clip;
 
 }
@@ -88,20 +86,20 @@
 }
 
 @media (min-width: 1024px){
+    *{
+        overflow: hidden;
+    }
+    
     main {
-        display: -ms-flexbox;
         display: flex;
-        -ms-flex-positive: 1;
         flex-grow: 1;
-        -ms-flex-align: center;
         align-items: center;
-        -ms-flex-pack: center;
         justify-content: center;
         margin: 0;
         padding: 0;
+        height: 100%;
     }
     .auth-content {
-        margin: 30%;
         padding-top: 200px;
     }
 

@@ -115,7 +115,7 @@ function SignUp() {
         <a className="auth-sidebar-credit" href="">@Aeonaxy</a>
         </div>
       </section>
-      <section className="main-content">
+      <section className="main-content" scroll='no'>
         <main>
           <div className="auth-content">
             <h2>Sign up to Aeonaxy</h2>
