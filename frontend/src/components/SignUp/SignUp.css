@@ -86,8 +86,8 @@
 }
 
 @media (min-width: 1024px){
-    *{
-        overflow: hidden;
+    .SignUp{
+        overflow:hidden;
     }
     
     main {

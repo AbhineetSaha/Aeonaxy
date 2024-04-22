@@ -104,7 +104,7 @@ function SignUp() {
     )
   }else{
     return(
-      <div className='SignUp'>
+      <div className='SignUp overflow-hidden'>
       <section className="side-content">
         <div className='logo'>
         <a href="/" className="auth-sidebar-logo">
