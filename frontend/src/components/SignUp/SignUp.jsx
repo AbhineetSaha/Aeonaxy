@@ -54,7 +54,7 @@ function SignUp() {
       t =false;
     }
     return t;
-  }
+  };
 
   async function handleClick() {
     setError([]);
@@ -62,7 +62,7 @@ function SignUp() {
     if (check === true){
         axios.get(`https://starfish-app-dgren.ondigitalocean.app/api/pushData?username=${username}&name=${name}&password=${password}&email=${email}`).then((res) => {navigate(`/profilemaking/${username}`)});
       };
-    }
+    };
 
   if (window.innerWidth < 960){
     return (
@@ -75,7 +75,7 @@ function SignUp() {
             <ul>
             {error.map((err) => <li>{err}</li>)}
             </ul>
-            <div className="auth-form signup-form" data-hide-on-signup-form="">
+            <div className="auth-form signup-form">
             <Form>
               <div className="form-field">
                 <fieldset className="user_name"><label for="user_name">Name</label><input autoComplete="name" className="text-input" type="text" name="user[name]" id="user_name" onChange={(e)=>{setName(e.target.value)}}/></fieldset>
@@ -104,7 +104,7 @@ function SignUp() {
     )
   }else{
     return(
-      <div className='SignUp overflow-hidden'>
+      <div className='SignUp' scroll='no'>
       <section className="side-content">
         <div className='logo'>
         <a href="/" className="auth-sidebar-logo">
@@ -122,7 +122,7 @@ function SignUp() {
             <ul>
             {error.map((err) => <li>{err}</li>)}
             </ul>
-            <div className="auth-form signup-form" data-hide-on-signup-form="">
+            <div className="auth-form signup-form">
             <Form>
             <div className="form-field-group">
               <div className="form-field">
@@ -138,7 +138,7 @@ function SignUp() {
             <div className="form-field">
                 <fieldset className="password"><label for="password">Password</label><input className="text-input" placeholder="6+ characters" type="password" name="user[password]" id="user_password" aria-autocomplete="list"  onChange={(e)=>{setPassword(e.target.value)}}/></fieldset>
             </div>
-            <div className="form-field check-wrap opt-in">
+            <div className="form-field">
             <Form.Group className="mb-3" controlId="formBasicCheckbox">
               <Form.Check type="checkbox" label="I agree to the Terms and Conditions" onChange={(e) => setChecked(e.target.checked)} />
             </Form.Group>

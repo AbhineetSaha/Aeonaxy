@@ -16,7 +16,7 @@ function Role() {
         return(
             <>
             <Navbar />
-            <main className='main-form d-block'>
+            <main className='main-form d-block Role'>
                 <div className='main-container'>
                     <header class='header mb-5 mt-5 pt-5'>
                         <h1 className='header-title mt-5 pt-5'>Welcome {username}!</h1>
@@ -24,7 +24,7 @@ function Role() {
                     </header>
                 </div>
                 <form className=' d-flex justify-content-center align-items-center'>
-                        <label class="radio-container" id='1'>
+                        <label class="radio-container overflow-visible" id='1'>
                             <input id='radio' type="radio" name="option" value="yes" onClick={(e)=>{setRole('Explorer');document.getElementById('2').classList.remove('selected');document.getElementById('1').classList.add('selected')}}/>
                             <span class="radio-button">
                             <div className='role-content'>
@@ -51,7 +51,7 @@ function Role() {
         return(
             <>
             <Navbar />
-            <main className='main-form d-block'>
+            <main className='main-form d-block Role'>
                 <div className='main-container'>
                     <header class='header'>
                         <h1 className='header-title'>Welcome {username}!</h1>
